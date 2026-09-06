@@ -1,0 +1,121 @@
+.page {
+  --ink: #090b0f;
+  --paper: #eef0f5;
+  --acid: #d7ff32;
+  --blue: #526bff;
+  min-height: 100svh;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  overflow-x: hidden;
+}
+.page * { box-sizing: border-box; }
+.page a { color: inherit; text-decoration: none; }
+.mono { font-family: var(--font-geist-mono), "SFMono-Regular", monospace; }
+.nav { height: 84px; padding: 0 clamp(24px, 4.4vw, 76px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid rgba(238,240,245,.18); }
+.wordmark { width: fit-content; font-size: 25px; font-weight: 600; letter-spacing: -.06em; }
+.navMeta { display: flex; gap: 42px; color: rgba(238,240,245,.5); font-size: 10px; letter-spacing: .11em; }
+.back { justify-self: end; display: flex; gap: 12px; align-items: center; font-size: 11px; letter-spacing: .06em; }
+.back span { font-size: 18px; transition: transform .25s; }
+.back:hover span { transform: translateX(-5px); }
+.hero { position: relative; min-height: calc(100svh - 84px); padding: clamp(90px, 9vw, 155px) clamp(24px, 4.4vw, 76px) 70px; display: grid; grid-template-columns: 22% 1fr; border-bottom: 1px solid rgba(238,240,245,.18); overflow: hidden; }
+.hero::after { content: ""; position: absolute; width: 42vw; height: 42vw; right: -12vw; top: -13vw; border: 1px solid rgba(215,255,50,.23); border-radius: 50%; box-shadow: 0 0 0 7vw rgba(82,107,255,.05), 0 0 0 15vw rgba(215,255,50,.025); }
+.heroIndex { position: relative; z-index: 1; display: flex; flex-direction: column; color: var(--acid); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: .14em; }
+.heroIndex span:last-child { margin-top: auto; }
+.heroCopy { position: relative; z-index: 1; align-self: end; }
+.eyebrow { margin: 0 0 28px; color: var(--acid); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: .13em; }
+.hero h1 { margin: 0; max-width: 1300px; font-size: clamp(50px, 6.5vw, 118px); font-weight: 400; line-height: .91; letter-spacing: -.075em; }
+.lead { margin: 62px 0 0 auto; max-width: 690px; color: rgba(238,240,245,.64); font-size: clamp(14px, 1.08vw, 18px); line-height: 1.85; }
+.identity { padding: 0 clamp(24px, 4.4vw, 76px); display: grid; grid-template-columns: repeat(4, 1fr); color: var(--ink); background: var(--acid); }
+.identity article { min-height: 210px; padding: 32px 28px 28px 0; display: flex; flex-direction: column; border-right: 1px solid rgba(9,11,15,.25); }
+.identity article + article { padding-left: 28px; }
+.identity article:last-child { border-right: 0; }
+.identity span { font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .11em; }
+.identity strong, .identity a { margin-top: auto; font-size: clamp(18px, 1.65vw, 29px); font-weight: 400; line-height: 1.25; letter-spacing: -.035em; }
+.sectionLabel { display: flex; gap: 18px; align-items: center; color: var(--acid); font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .12em; }
+.sectionLabel > span { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; }
+.sectionLabel p { margin: 0; }
+.profileSection, .experienceSection, .educationSection, .capabilitySection { padding: clamp(95px, 12vw, 210px) clamp(24px, 4.4vw, 76px); }
+.profileCopy { margin: 70px 0 0 20%; }
+.profileCopy h2, .educationLead h2, .capabilitySection header h2, .practiceSection h2, .contactSection h2 { margin: 0; font-size: clamp(44px, 5.5vw, 98px); font-weight: 400; line-height: .96; letter-spacing: -.072em; }
+.profileText { margin: 75px 0 0 auto; max-width: 760px; display: grid; grid-template-columns: 1fr 1fr; gap: 55px; color: rgba(238,240,245,.58); font-size: 14px; line-height: 1.85; }
+.profileText p { margin: 0; }
+.experienceSection { color: var(--ink); background: var(--paper); }
+.experienceSection .sectionLabel, .educationSection .sectionLabel, .capabilitySection .sectionLabel { color: var(--blue); }
+.experienceList { margin: 75px 0 0 20%; border-top: 1px solid rgba(9,11,15,.24); }
+.experienceList article { min-height: 330px; padding: 34px 0; display: grid; grid-template-columns: 120px .8fr 1fr; grid-template-rows: auto auto 1fr; gap: 12px 40px; border-bottom: 1px solid rgba(9,11,15,.18); }
+.experienceList article > div { grid-row: 1 / -1; display: flex; flex-direction: column; justify-content: space-between; }
+.experienceList article > div span { color: var(--blue); font-size: 9px; }
+.experienceList article > div strong { font-size: 70px; font-weight: 400; letter-spacing: -.08em; }
+.experienceList h3 { margin: 0; align-self: end; font-size: clamp(30px, 3.3vw, 58px); font-weight: 400; letter-spacing: -.055em; }
+.experienceList .role { margin: 0; align-self: start; color: rgba(9,11,15,.62); font-size: 12px; }
+.experienceList article > p:last-child { grid-column: 3; grid-row: 1 / -1; margin: 0; align-self: center; max-width: 620px; color: rgba(9,11,15,.58); font-size: 14px; line-height: 1.8; }
+.educationSection { background: #dfe4ff; color: var(--ink); }
+.educationLead { margin: 70px 0 100px 20%; display: grid; grid-template-columns: 1.25fr .6fr; gap: 80px; align-items: end; }
+.educationLead p { margin: 0; color: rgba(9,11,15,.58); font-size: 14px; line-height: 1.8; }
+.educationGrid { margin-left: 20%; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(9,11,15,.24); }
+.educationGrid article { min-height: 350px; padding: 30px 42px 35px 0; border-right: 1px solid rgba(9,11,15,.18); }
+.educationGrid article + article { padding-left: 42px; border-right: 0; }
+.educationGrid span { color: var(--blue); font-size: 9px; }
+.educationGrid h3 { margin: 100px 0 12px; font-size: clamp(30px, 3.2vw, 55px); font-weight: 400; letter-spacing: -.05em; }
+.educationGrid strong { font-size: 13px; font-weight: 500; }
+.educationGrid p { margin: 28px 0 0; max-width: 500px; color: rgba(9,11,15,.58); font-size: 13px; line-height: 1.75; }
+.capabilitySection { color: var(--ink); background: var(--paper); }
+.capabilitySection header { margin: 70px 0 105px 20%; }
+.capabilityGrid { margin-left: 20%; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(9,11,15,.22); border-left: 1px solid rgba(9,11,15,.22); }
+.capabilityGrid article { min-height: 280px; padding: 28px; display: flex; flex-direction: column; border-right: 1px solid rgba(9,11,15,.22); border-bottom: 1px solid rgba(9,11,15,.22); }
+.capabilityGrid span { color: var(--blue); font-size: 9px; }
+.capabilityGrid h3 { margin: auto 0 18px; font-size: 30px; font-weight: 400; letter-spacing: -.04em; }
+.capabilityGrid p { margin: 0; max-width: 520px; color: rgba(9,11,15,.56); font-size: 13px; line-height: 1.72; }
+.practiceSection { min-height: 720px; padding: clamp(95px, 10vw, 170px) clamp(24px, 4.4vw, 76px); display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; background: var(--blue); color: #fff; }
+.practiceSection .eyebrow { color: #fff; }
+.practiceSection a { width: 280px; height: 68px; padding: 0 25px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; font-size: 11px; letter-spacing: .08em; transition: color .25s, background .25s; }
+.practiceSection a:hover { color: var(--blue); background: #fff; }
+.contactSection { min-height: 92svh; padding: clamp(95px, 10vw, 170px) clamp(24px, 4.4vw, 76px); display: flex; flex-direction: column; justify-content: center; color: var(--ink); background: var(--acid); }
+.contactSection .eyebrow { color: var(--ink); }
+.contactSection h2 { max-width: 1200px; font-size: clamp(62px, 8.8vw, 160px); line-height: .84; }
+.contactSection a { margin-top: 85px; width: fit-content; padding: 18px 0; display: flex; gap: 90px; border-top: 1px solid rgba(9,11,15,.5); border-bottom: 1px solid rgba(9,11,15,.5); font-size: 12px; letter-spacing: .04em; }
+.footer { min-height: 110px; padding: 0 clamp(24px, 4.4vw, 76px); display: flex; justify-content: space-between; align-items: center; color: rgba(238,240,245,.45); font-size: 9px; letter-spacing: .08em; }
+
+@media (max-width: 900px) {
+  .nav { height: 70px; padding: 0 20px; grid-template-columns: 1fr auto; }
+  .navMeta { display: none; }
+  .back { font-size: 10px; }
+  .hero { min-height: calc(100svh - 70px); padding: 100px 20px 55px; display: block; }
+  .heroIndex { display: none; }
+  .hero h1 { font-size: clamp(42px, 11.5vw, 62px); }
+  .lead { margin-top: 48px; }
+  .identity { padding: 0 20px; grid-template-columns: 1fr 1fr; }
+  .identity article, .identity article + article { min-height: 150px; padding: 25px 14px 24px 0; border-bottom: 1px solid rgba(9,11,15,.24); }
+  .identity article:nth-child(even) { padding-left: 16px; border-right: 0; }
+  .identity strong, .identity a { font-size: 17px; }
+  .profileSection, .experienceSection, .educationSection, .capabilitySection { padding: 90px 20px; }
+  .profileCopy, .experienceList, .educationGrid, .capabilityGrid { margin-left: 0; }
+  .profileCopy { margin-top: 65px; }
+  .profileCopy h2, .educationLead h2, .capabilitySection header h2, .practiceSection h2 { font-size: 42px; }
+  .profileText { margin-top: 50px; grid-template-columns: 1fr; gap: 24px; }
+  .experienceList { margin-top: 65px; }
+  .experienceList article { min-height: 360px; grid-template-columns: 62px 1fr; grid-template-rows: auto auto 1fr; gap: 14px 20px; }
+  .experienceList article > div { grid-row: 1 / -1; }
+  .experienceList article > div strong { font-size: 44px; }
+  .experienceList h3, .experienceList .role { grid-column: 2; }
+  .experienceList article > p:last-child { grid-column: 2; grid-row: 3; align-self: start; margin-top: 20px; }
+  .educationLead { margin: 65px 0 70px; display: block; }
+  .educationLead p { margin-top: 30px; }
+  .educationGrid { grid-template-columns: 1fr; }
+  .educationGrid article, .educationGrid article + article { min-height: 300px; padding: 28px 0; border-right: 0; border-bottom: 1px solid rgba(9,11,15,.2); }
+  .educationGrid h3 { margin-top: 78px; }
+  .capabilitySection header { margin: 65px 0 70px; }
+  .capabilityGrid { grid-template-columns: 1fr; }
+  .capabilityGrid article { min-height: 230px; }
+  .practiceSection { min-height: 680px; padding: 90px 20px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; }
+  .practiceSection a { width: 100%; }
+  .contactSection { padding: 90px 20px; }
+  .contactSection h2 { font-size: clamp(52px, 15vw, 76px); }
+  .contactSection a { margin-top: 65px; gap: 35px; }
+  .footer { padding: 28px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back span, .practiceSection a { transition: none; }
+}
