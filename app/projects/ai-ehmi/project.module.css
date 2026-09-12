@@ -15,6 +15,39 @@
 .page a { color: inherit; text-decoration: none; }
 .mono { font-family: var(--font-geist-mono), "SFMono-Regular", monospace; }
 
+.paperCta {
+  position: fixed;
+  z-index: 80;
+  right: clamp(18px, 2.6vw, 42px);
+  bottom: clamp(18px, 2.6vw, 38px);
+  min-width: 286px;
+  min-height: 68px;
+  padding: 9px 10px 9px 12px;
+  display: grid;
+  grid-template-columns: 42px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+  color: var(--paper);
+  background: rgba(8, 17, 15, .94);
+  border: 1px solid rgba(200, 255, 90, .8);
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(8, 17, 15, .24);
+  backdrop-filter: blur(12px);
+  transition: transform .3s ease, background-color .3s ease, color .3s ease;
+}
+.paperCtaMark, .paperCtaArrow { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; }
+.paperCtaMark { color: var(--mint); border: 1px solid rgba(200, 255, 90, .55); animation: paperPulse 3.6s ease-in-out infinite; }
+.paperCtaCopy { display: grid; gap: 3px; }
+.paperCtaCopy small { color: rgba(237, 240, 232, .58); font-family: var(--font-geist-mono), monospace; font-size: 8px; line-height: 1.2; letter-spacing: .12em; }
+.paperCtaCopy strong { font-size: 14px; font-weight: 500; letter-spacing: .03em; }
+.paperCtaArrow { color: var(--ink); background: var(--mint); font-size: 20px; transition: transform .3s ease; }
+.paperCta:hover { color: var(--ink); background: var(--mint); transform: translateY(-4px); }
+.paperCta:hover .paperCtaMark { color: var(--ink); border-color: rgba(8, 17, 15, .35); }
+.paperCta:hover .paperCtaCopy small { color: rgba(8, 17, 15, .58); }
+.paperCta:hover .paperCtaArrow { color: var(--paper); background: var(--ink); transform: rotate(8deg); }
+.paperCta:focus-visible { outline: 3px solid var(--paper); outline-offset: 4px; }
+@keyframes paperPulse { 50% { transform: rotate(12deg) scale(1.08); } }
+
 .nav {
   position: absolute;
   z-index: 20;
@@ -122,10 +155,13 @@
 .finalResult .eyebrow { color: #07100e; }
 .finalResult h2 { margin: 0; font-size: clamp(66px, 10vw, 182px); font-weight: 400; line-height: .78; letter-spacing: -.085em; }
 .finalResult > p:not(.eyebrow) { margin: 70px 0 0; max-width: 660px; font-size: 15px; line-height: 1.75; }
-.finalResult a { margin-top: 76px; width: fit-content; padding: 18px 0; display: flex; gap: 100px; border-top: 1px solid rgba(7,16,14,.55); border-bottom: 1px solid rgba(7,16,14,.55); font-size: 11px; letter-spacing: .06em; }
+.finalActions { margin-top: 76px; display: flex; flex-wrap: wrap; gap: 18px 48px; }
+.finalResult .finalActions a { width: fit-content; margin: 0; padding: 18px 0; display: flex; gap: 70px; border-top: 1px solid rgba(7,16,14,.55); border-bottom: 1px solid rgba(7,16,14,.55); font-size: 11px; letter-spacing: .06em; }
 .footer { min-height: 110px; padding: 0 clamp(24px, 4.4vw, 76px); display: flex; justify-content: space-between; align-items: center; gap: 30px; color: rgba(237,240,232,.42); background: var(--ink); font-size: 9px; letter-spacing: .07em; }
 
 @media (max-width: 900px) {
+  .paperCta { right: 14px; bottom: 14px; min-width: 0; width: calc(100% - 28px); min-height: 60px; grid-template-columns: 36px 1fr 38px; }
+  .paperCtaMark, .paperCtaArrow { width: 36px; height: 36px; }
   .nav { height: 70px; padding: 0 20px; grid-template-columns: 1fr auto; }
   .navMeta { display: none; }
   .back { font-size: 10px; }
@@ -170,6 +206,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .back span { transition: none; }
+  .paperCta, .paperCtaArrow { transition: none; }
+  .paperCtaMark { animation: none; }
 }
 
 /* Chinese headings retain a readable rhythm on narrow screens. */

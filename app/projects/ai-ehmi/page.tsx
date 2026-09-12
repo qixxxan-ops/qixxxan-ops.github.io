@@ -47,6 +47,21 @@ const findings = [
 export default function AiEhmiProject() {
   return (
     <main className={styles.page}>
+      <a
+        className={styles.paperCta}
+        href="https://dl.designresearchsociety.org/iasdr/iasdr2025/fullpapers/164/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="在新窗口阅读胡宇杰发表于 IASDR 2025 的完整论文"
+      >
+        <span className={styles.paperCtaMark} aria-hidden="true">✦</span>
+        <span className={styles.paperCtaCopy}>
+          <small>IASDR 2025 · FULL PAPER</small>
+          <strong>阅读我的论文</strong>
+        </span>
+        <span className={styles.paperCtaArrow} aria-hidden="true">↗</span>
+      </a>
+
       <header className={styles.nav}>
         <a className={styles.wordmark} href="/" aria-label="返回胡宇杰个人网站首页">胡宇杰</a>
         <div className={styles.navMeta}>
@@ -160,7 +175,10 @@ export default function AiEhmiProject() {
         <p className={styles.eyebrow}>FIRST-AUTHOR RESEARCH / IASDR 2025</p>
         <h2>WHAT IS SAID.<br />HOW IT IS SAID.<br />WHEN IT IS SAID.</h2>
         <p>这项研究把 eHMI 从一块“输出信息”的界面，重新定义为人和智能体协调关系的媒介：智能体既要清晰地传达意图，也要理解它的表达会如何影响人。</p>
-        <a href="/#project-gallery">返回所有作品 <span aria-hidden="true">↗</span></a>
+        <div className={styles.finalActions}>
+          <a href="https://dl.designresearchsociety.org/iasdr/iasdr2025/fullpapers/164/" target="_blank" rel="noopener noreferrer">阅读完整论文 <span aria-hidden="true">↗</span></a>
+          <a href="/#project-gallery">返回所有作品 <span aria-hidden="true">↗</span></a>
+        </div>
       </section>
 
       <footer className={styles.footer}>
