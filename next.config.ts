@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
         trailingSlash: true,
         images: { unoptimized: true },
         experimental: { webpackBuildWorker: false },
-        typescript: { ignoreBuildErrors: true },
+        typescript: { tsconfigPath: "tsconfig.site.json" },
       }
     : {}),
 };

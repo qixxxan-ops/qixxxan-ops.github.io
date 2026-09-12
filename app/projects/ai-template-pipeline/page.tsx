@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PipelineVisual, CaseSummary } from "../CaseVisuals";
 import type { CSSProperties } from "react";
 import styles from "./project.module.css";
 
@@ -66,7 +67,7 @@ export default function AITemplatePipelineProject() {
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>GENERATIVE AI · CONTENT PIPELINE · 0→1</p>
-          <h1>让 AI 成为<br />模板总导演。</h1>
+          <h1>AI 编排创意，<br />系统保证输出。</h1>
           <p className={styles.lead}>
             我从 0 到 1 负责 AI 视频模板自动化生产平台：让大模型理解音乐、构思创意并编排包装，
             再由确定性编译器生成可直接导入的模板文件。
@@ -78,6 +79,7 @@ export default function AITemplatePipelineProject() {
         </figure>
       </section>
 
+      <CaseSummary role="定义生产流程、模型边界、质量标准与运营交付闭环。" delivery="AI 编排与确定性生成的分层生产方案。" boundary="校验面板为解释性示例，不是运行日志或实时平台。" />
       <section className={styles.outcomes} aria-label="项目成果">
         <div><strong>1 MIN</strong><span>单次模板生成</span></div>
         <div><strong>700+</strong><span>音乐与包装素材结构化</span></div>
@@ -91,6 +93,7 @@ export default function AITemplatePipelineProject() {
         <article><span className={styles.mono}>PRODUCT VALUE</span><strong>从“生成内容”到“交付产能”</strong><p>产物不是演示稿，而是能校验、能追踪、能直接进入运营后台的模板。</p></article>
       </section>
 
+      <PipelineVisual />
       <section className={styles.context}>
         <div className={styles.sectionLabel}><span>01</span><p>WHY</p></div>
         <div className={styles.contextMain}>
@@ -114,47 +117,7 @@ export default function AITemplatePipelineProject() {
         </div>
       </section>
 
-      <section className={styles.architecture}>
-        <div className={styles.sectionLabel}><span>02</span><p>ARCHITECTURE</p></div>
-        <div className={styles.architectureHeader}>
-          <h2>创造力交给模型，<br />确定性交给系统。</h2>
-          <p>
-            核心挑战不是让大模型“生成一个 JSON”，而是让创意结果真正进入生产系统。
-            我把不确定性拆成审美判断、资源选择与文件正确性三类，再用 AI 编排与确定性编译分别承接。
-          </p>
-        </div>
-        <div className={styles.architectureGrid}>
-          <article className={styles.aiLayer}>
-            <p className={styles.layerIndex}>LAYER / 01</p>
-            <h3>AI ORCHESTRATOR</h3>
-            <p>处理语义理解、概念发散、审美决策与素材组合等开放问题。</p>
-            <div className={styles.layerTags}><span>音乐理解</span><span>核心概念</span><span>包装编排</span><span>选择理由</span></div>
-          </article>
-          <div className={styles.handoff} aria-label="结构化编排结果传递给编译器">
-            <span>STRUCTURED PLAN</span><i>→</i>
-          </div>
-          <article className={styles.compilerLayer}>
-            <p className={styles.layerIndex}>LAYER / 02</p>
-            <h3>DETERMINISTIC COMPILER</h3>
-            <p>处理资源寻址、字段规范、格式生成和规则校验等确定性任务。</p>
-            <div className={styles.layerTags}><span>资源寻址</span><span>特效文件</span><span>参数约束</span><span>模板结构</span></div>
-          </article>
-        </div>
-      </section>
 
-      <section className={styles.pipelineSection}>
-        <div className={styles.sectionLabel}><span>03</span><p>PIPELINE</p></div>
-        <h2>从一句需求，<br />到可运营的模板文件。</h2>
-        <div className={styles.pipelineList}>
-          {pipeline.map(([index, name, detail]) => (
-            <article key={index}>
-              <span className={styles.mono}>{index}</span>
-              <h3>{name}</h3>
-              <p>{detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className={styles.directorSection}>
         <div className={styles.directorIntro}>

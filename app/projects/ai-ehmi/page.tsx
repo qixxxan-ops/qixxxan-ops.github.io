@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ResearchVisual, CaseSummary } from "../CaseVisuals";
 import styles from "./project.module.css";
 
 const project = {
@@ -73,6 +74,7 @@ export default function AiEhmiProject() {
         </figure>
       </section>
 
+      <CaseSummary role="第一作者开展智能体交互研究。" delivery="语言条件设计与情绪、生理、视觉注意的多维分析。" boundary="实验发现与设计推论分开呈现，不外推为真实道路验证。" />
       <section className={styles.stats} aria-label="研究概览">
         <div><strong>IASDR</strong><span>设计学国际顶会 · 2025</span></div>
         <div><strong>01</strong><span>第一作者</span></div>
@@ -108,18 +110,7 @@ export default function AiEhmiProject() {
         </figure>
       </section>
 
-      <section className={styles.conditionsSection}>
-        <div className={styles.sectionLabel}><span>03</span><p>EXPERIMENTAL CONDITIONS</p></div>
-        <header className={styles.conditionsHeader}>
-          <h2>只改变语言，<br />让因果更清晰。</h2>
-          <p>统一视觉形式、字数、展示时长与字体，以语言内容作为唯一操控变量。</p>
-        </header>
-        <div className={styles.conditionList}>
-          {conditions.map(([id, text, type]) => (
-            <article key={id}><span>{id}</span><h3>{text}</h3><p>{type}</p></article>
-          ))}
-        </div>
-      </section>
+      <ResearchVisual />
 
       <section className={styles.methodSection}>
         <div className={styles.sectionLabel}><span>04</span><p>MIXED-METHODS STUDY</p></div>
@@ -142,7 +133,7 @@ export default function AiEhmiProject() {
       <section className={styles.findingsSection}>
         <div className={styles.sectionLabel}><span>05</span><p>KEY FINDINGS</p></div>
         <header className={styles.findingsHeader}>
-          <p className={styles.resultNumber}>中性拟人 &gt; 亲和拟人 &gt; 道歉拟人 &gt; 指示表达</p>
+          <p className={styles.resultNumber}>表达偏好、情绪与注意，分别看。</p>
           <h2>最“可爱”的话，<br />不一定是最好的话。</h2>
         </header>
         <div className={styles.findingList}>

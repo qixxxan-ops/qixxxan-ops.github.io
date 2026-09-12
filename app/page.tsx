@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Explorations from "./Explorations";
 import { Bodies, Body, Composite, Engine, Sleeping, type Body as MatterBody } from "matter-js";
 
 const vertexShader = `
@@ -1150,7 +1151,7 @@ function ParticleField() {
       Body.setPosition(mouseBody, {
         x: pointer.physicsX,
         y: pointer.physicsY,
-      }, true);
+      });
       Body.setVelocity(mouseBody, {
         x: pointer.vx * 0.62,
         y: pointer.vy * 0.62,
@@ -1406,8 +1407,9 @@ export default function Home() {
                 <span className="code">02</span>
               </div>
               <div className="about-summary">
-                <p>胡宇杰，湖南大学设计学硕士。聚焦 AI 产品与智能影像，把用户问题、模型能力和工程约束组织成可验证的产品方案。</p>
+                <p>胡宇杰，湖南大学设计学硕士在读（2024—2027）。聚焦 AI 产品与智能影像，把用户问题、模型能力和工程约束组织成可验证的产品方案。</p>
                 <a href="/about">查看个人信息 <span>↗</span></a>
+                <a href="#explorations">设计作品集 <span>↗</span></a>
               </div>
             </section>
 
@@ -1431,6 +1433,7 @@ export default function Home() {
       </div>
 
       <ProjectGallery />
+      <Explorations />
       <Finale />
     </main>
   );

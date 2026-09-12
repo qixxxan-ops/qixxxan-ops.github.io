@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FlashVisual, CaseSummary } from "../CaseVisuals";
 import styles from "./project.module.css";
 
 const project = {
@@ -64,12 +65,14 @@ export default function FlashFillLightProject() {
         </figure>
       </section>
 
+      <CaseSummary role="Ace Pro 2 相机侧固件适配；整体 Owner 在配件线。" delivery="需求定义、交互状态、跨团队联调与风险闭环。" boundary="交互为方案示意；结果数字需结合版本和验收范围理解。" />
       <section className={styles.outcome} aria-label="项目成果">
         <div><strong>06</strong><span>核心交互节点完整交付</span></div>
         <div><strong>0</strong><span>正式版重大体验问题</span></div>
         <div><strong>ON TIME</strong><span>随「白色影像大师」版本上市</span></div>
       </section>
 
+      <FlashVisual />
       <section className={styles.context}>
         <div className={styles.sectionLabel}><span>01</span><p>CONTEXT</p></div>
         <div className={styles.contextCopy}>

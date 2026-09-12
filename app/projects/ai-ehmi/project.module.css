@@ -171,3 +171,6 @@
 @media (prefers-reduced-motion: reduce) {
   .back span { transition: none; }
 }
+
+/* Chinese headings retain a readable rhythm on narrow screens. */
+@media(max-width:700px){.page h1{font-size:clamp(30px,8vw,42px);line-height:1.2;letter-spacing:-.025em;word-break:normal;overflow-wrap:break-word;text-wrap:balance}.page h2{font-size:clamp(28px,7vw,40px);line-height:1.22;letter-spacing:-.02em}.page p{font-size:16px;line-height:1.8}.hero{min-height:auto;padding-top:48px;padding-bottom:48px}.page h1 br{display:none}}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { RetouchVisual, CaseSummary } from "../CaseVisuals";
 import styles from "./project.module.css";
 
 const project = {
@@ -101,7 +102,7 @@ export default function AiRetouchingProject() {
         </figure>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>INSTA360 · AI IMAGING · EXPLORATORY PRODUCT</p>
-          <h1>不是把照片<br />变成另一张图，<br />而是更像它本来<br />就该有的样子。</h1>
+          <h1>让 AI 修图，<br />回到真实场景。</h1>
           <p className={styles.lead}>
             在项目负责人完成前期可行性摸底后，我承接具体方案落地，
             通过 Demo、内测与用户实验，识别并闭环全链路耗时、模板质量和场景分发三类关键不确定性。
@@ -109,6 +110,7 @@ export default function AiRetouchingProject() {
         </div>
       </section>
 
+      <CaseSummary role="承接具体方案落地，推进 Demo、内测与跨端问题拆解。" delivery="耗时优化、模板质量回归与场景匹配策略。" boundary="探索项目；技术性能改善不等同商业价值已验证。" />
       <section className={styles.signalBar} aria-label="项目关键验证信号">
         <div><strong>154→30s</strong><span>全链路耗时优化</span></div>
         <div><strong>2.5 / 5</strong><span>内测初始付费意愿</span></div>
@@ -138,27 +140,7 @@ export default function AiRetouchingProject() {
         </div>
       </section>
 
-      <section className={styles.performance}>
-        <div className={styles.performanceLead}>
-          <div className={styles.sectionLabel}><span>02</span><p>PERFORMANCE</p></div>
-          <p className={styles.giantNumber}>154→30s</p>
-          <h2>从链路跑通，<br />到等待可接受。</h2>
-          <p>
-            首版 Demo 的完整链路耗时为 154 秒，对拍后即时修图而言远超可接受范围。
-            我重新拉齐相机、传输与 App / 云端三端，将等待拆成可以归因、可以分工的环节，最终把总耗时压缩至 30 秒。
-          </p>
-        </div>
-        <div className={styles.performanceSteps}>
-          {performanceSteps.map((step) => (
-            <article key={step.number}>
-              <div><span className={styles.mono}>{step.number}</span><i>{step.name}</i></div>
-              <h3>{step.title}</h3>
-              <p>{step.detail}</p>
-            </article>
-          ))}
-          <p className={styles.performanceConclusion}>能运行，是技术判断；等待可接受，才是产品判断。</p>
-        </div>
-      </section>
+      <RetouchVisual />
 
       <section className={styles.research}>
         <div className={styles.sectionLabel}><span>03</span><p>INNER TEST</p></div>
